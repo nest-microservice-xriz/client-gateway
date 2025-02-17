@@ -8,8 +8,11 @@ import { PaginationDto, RpcCustomExceptionFilter } from 'src/common';
 
 @Controller('products')
 export class ProductsController {
-  constructor(@Inject(PRODUCT_SERVICE) private readonly productClient: ClientProxy) { }
   private readonly logger = new Logger('Products')
+
+  constructor(@Inject(PRODUCT_SERVICE) private readonly productClient: ClientProxy) {
+    this.logger.log('Connected correctly')
+  }
 
   @Post()
   createProduct(@Body() createProductDto: CreateProductDto) {
