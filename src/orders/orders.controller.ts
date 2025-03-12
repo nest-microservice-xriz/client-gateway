@@ -4,8 +4,6 @@ import { catchError } from 'rxjs';
 import { PaginationDto } from 'src/common';
 import { ORDER_SERVICE } from 'src/conf';
 import { ChangeStatusDto, CreateOrderDto } from './dto';
-import { log } from 'console';
-import { OrderStatus } from './enum/order.enum';
 
 @Controller('orders')
 export class OrdersController {
